@@ -1,0 +1,18 @@
+<resources>
+    <string name="app_name">Opendata App</string>
+
+
+    <string name="all">Todos</string>
+    <string name="calendar">Calendario</string>
+    <string name="my_events">Mis eventos</string>
+    <string name="my_preferences">Mis preferencias</string>
+
+    <string name="category">Categoria</string>
+
+
+
+
+
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+</resources>
