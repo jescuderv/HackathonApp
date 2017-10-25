@@ -9,6 +9,7 @@ import es.jcescudero15.javitan.hackathonapp.R;
 import es.jcescudero15.javitan.hackathonapp.ui.fragment.CalendarFragment;
 import es.jcescudero15.javitan.hackathonapp.ui.fragment.EventListFragment;
 import es.jcescudero15.javitan.hackathonapp.ui.fragment.MainFragment;
+import es.jcescudero15.javitan.hackathonapp.ui.fragment.PreferencesFragment;
 
 
 public class MainActivity extends AppCompatActivity implements MainFragment.onEventsListClickListener,
@@ -54,6 +55,10 @@ MainFragment.onCalendarClickListener, MainFragment.onMyEventsClickListener, Main
 
     @Override
     public void onClickPreferences() {
-
+        getFragmentManager()
+                .beginTransaction()
+                .replace(R.id.content_main, new PreferencesFragment())
+                .addToBackStack(null)
+                .commit();
     }
 }
