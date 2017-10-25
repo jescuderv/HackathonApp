@@ -1,22 +1,21 @@
 package es.jcescudero15.javitan.hackathonapp.ui.fragment;
 
 
-import android.app.Fragment;
 import android.os.Bundle;
+import android.app.Fragment;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 
 import es.jcescudero15.javitan.hackathonapp.R;
 
-
 /**
  * A simple {@link Fragment} subclass.
  */
-public class EventListFragment extends Fragment {
+public class CalendarFragment extends Fragment {
 
 
-    public EventListFragment() {
+    public CalendarFragment() {
         // Required empty public constructor
     }
 
@@ -24,8 +23,8 @@ public class EventListFragment extends Fragment {
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
-        // Inflate the layout for this fragment
-        return inflater.inflate(R.layout.fragment_event_list, container, false);
+        View view = inflater.inflate(R.layout.fragment_calendar, container, false);
+        return view;
     }
 
 }

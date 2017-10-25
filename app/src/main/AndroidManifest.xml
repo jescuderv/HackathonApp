@@ -18,7 +18,6 @@
             </intent-filter>
         </activity>
         <activity android:name=".ui.activity.MyEventsActivity" />
-        <activity android:name=".ui.activity.CalendarActivity" />
     </application>
 
 
