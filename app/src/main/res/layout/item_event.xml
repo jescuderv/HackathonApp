@@ -16,12 +16,14 @@
             android:orientation="vertical">
 
             <LinearLayout
+                android:id="@+id/item_layout_background"
                 android:orientation="vertical"
                 android:layout_width="match_parent"
                 android:background="@color/cardview_dark_background"
                 android:layout_height="match_parent">
 
                 <ImageView
+                    android:id="@+id/item_image_category_event"
                     android:layout_gravity="end"
                     android:layout_width="150dp"
                     android:layout_height="150dp"

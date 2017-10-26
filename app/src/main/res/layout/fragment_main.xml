@@ -4,11 +4,14 @@
     android:layout_height="match_parent"
     android:id="@+id/main_activity_layout">
 
-    <View
+    <ImageView
         android:layout_width="match_parent"
-        android:layout_height="200dp">
+        android:layout_height="200dp"
+        android:src="@drawable/background_main"
+        android:adjustViewBounds="true"
+        android:scaleType="centerCrop">
 
-    </View>
+    </ImageView>
 
     <TableRow
         android:layout_width="match_parent"
@@ -20,7 +23,8 @@
             android:layout_width="0dp"
             android:layout_height="match_parent"
             android:layout_weight=".5"
-            android:orientation="vertical">
+            android:orientation="vertical"
+            android:background="@color/colorAllEvents">
 
             <ImageView
                 android:id="@+id/main_events_list"
@@ -57,7 +61,12 @@
             android:layout_height="wrap_content"
             android:layout_weight=".5"
             android:gravity="center"
-            android:text="@string/all" />
+            android:text="@string/all"
+            android:textSize="16dp"
+            android:padding="5dp"
+            android:textStyle="bold"
+            android:textColor="colorw"
+            android:background="@color/colorAllEvents2"/>
 
         <TextView
             android:layout_width="0dp"
