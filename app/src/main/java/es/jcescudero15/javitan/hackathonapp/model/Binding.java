@@ -4,16 +4,16 @@ package es.jcescudero15.javitan.hackathonapp.model;
 public class Binding {
 
     private Uri uri;
-    private RdfsComment rdfsComment;
-    private GeoLong geoLong;
-    private GeoLat geoLat;
-    private OmSeccionProcedencia omSeccionProcedencia;
-    private OmHorarioEvento omHorarioEvento;
-    private EventPlace eventPlace;
-    private OmCategoriaEvento omCategoriaEvento;
-    private RdfsLabel rdfsLabel;
-    private EventTimeIntervalStarts eventTimeIntervalStarts;
-    private EventTimeIntervalFinishes eventTimeIntervalFinishes;
+    private RdfsComment rdfs_comment;
+    private GeoLong geo_long;
+    private GeoLat geo_lat;
+    private OmSeccionProcedencia om_seccionProcedencia;
+    private OmHorarioEvento om_horarioEvento;
+    private EventPlace event_place;
+    private OmCategoriaEvento om_categoriaEvento;
+    private RdfsLabel rdfs_label;
+    private EventTimeIntervalStarts event_time_intervalStarts;
+    private EventTimeIntervalFinishes event_time_intervalFinishes;
     private SubEvent subEvent;
 
     public Uri getUri() {
@@ -24,84 +24,84 @@ public class Binding {
         this.uri = uri;
     }
 
-    public RdfsComment getRdfsComment() {
-        return rdfsComment;
+    public RdfsComment getRdfs_comment() {
+        return rdfs_comment;
     }
 
-    public void setRdfsComment(RdfsComment rdfsComment) {
-        this.rdfsComment = rdfsComment;
+    public void setRdfs_comment(RdfsComment rdfs_comment) {
+        this.rdfs_comment = rdfs_comment;
     }
 
-    public GeoLong getGeoLong() {
-        return geoLong;
+    public GeoLong getGeo_long() {
+        return geo_long;
     }
 
-    public void setGeoLong(GeoLong geoLong) {
-        this.geoLong = geoLong;
+    public void setGeo_long(GeoLong geo_long) {
+        this.geo_long = geo_long;
     }
 
-    public GeoLat getGeoLat() {
-        return geoLat;
+    public GeoLat getGeo_lat() {
+        return geo_lat;
     }
 
-    public void setGeoLat(GeoLat geoLat) {
-        this.geoLat = geoLat;
+    public void setGeo_lat(GeoLat geo_lat) {
+        this.geo_lat = geo_lat;
     }
 
-    public OmSeccionProcedencia getOmSeccionProcedencia() {
-        return omSeccionProcedencia;
+    public OmSeccionProcedencia getOm_seccionProcedencia() {
+        return om_seccionProcedencia;
     }
 
-    public void setOmSeccionProcedencia(OmSeccionProcedencia omSeccionProcedencia) {
-        this.omSeccionProcedencia = omSeccionProcedencia;
+    public void setOm_seccionProcedencia(OmSeccionProcedencia om_seccionProcedencia) {
+        this.om_seccionProcedencia = om_seccionProcedencia;
     }
 
-    public OmHorarioEvento getOmHorarioEvento() {
-        return omHorarioEvento;
+    public OmHorarioEvento getOm_horarioEvento() {
+        return om_horarioEvento;
     }
 
-    public void setOmHorarioEvento(OmHorarioEvento omHorarioEvento) {
-        this.omHorarioEvento = omHorarioEvento;
+    public void setOm_horarioEvento(OmHorarioEvento om_horarioEvento) {
+        this.om_horarioEvento = om_horarioEvento;
     }
 
-    public EventPlace getEventPlace() {
-        return eventPlace;
+    public EventPlace getEvent_place() {
+        return event_place;
     }
 
-    public void setEventPlace(EventPlace eventPlace) {
-        this.eventPlace = eventPlace;
+    public void setEvent_place(EventPlace event_place) {
+        this.event_place = event_place;
     }
 
-    public OmCategoriaEvento getOmCategoriaEvento() {
-        return omCategoriaEvento;
+    public OmCategoriaEvento getOm_categoriaEvento() {
+        return om_categoriaEvento;
     }
 
-    public void setOmCategoriaEvento(OmCategoriaEvento omCategoriaEvento) {
-        this.omCategoriaEvento = omCategoriaEvento;
+    public void setOm_categoriaEvento(OmCategoriaEvento om_categoriaEvento) {
+        this.om_categoriaEvento = om_categoriaEvento;
     }
 
-    public RdfsLabel getRdfsLabel() {
-        return rdfsLabel;
+    public RdfsLabel getRdfs_label() {
+        return rdfs_label;
     }
 
-    public void setRdfsLabel(RdfsLabel rdfsLabel) {
-        this.rdfsLabel = rdfsLabel;
+    public void setRdfs_label(RdfsLabel rdfs_label) {
+        this.rdfs_label = rdfs_label;
     }
 
-    public EventTimeIntervalStarts getEventTimeIntervalStarts() {
-        return eventTimeIntervalStarts;
+    public EventTimeIntervalStarts getEvent_time_intervalStarts() {
+        return event_time_intervalStarts;
     }
 
-    public void setEventTimeIntervalStarts(EventTimeIntervalStarts eventTimeIntervalStarts) {
-        this.eventTimeIntervalStarts = eventTimeIntervalStarts;
+    public void setEvent_time_intervalStarts(EventTimeIntervalStarts event_time_intervalStarts) {
+        this.event_time_intervalStarts = event_time_intervalStarts;
     }
 
-    public EventTimeIntervalFinishes getEventTimeIntervalFinishes() {
-        return eventTimeIntervalFinishes;
+    public EventTimeIntervalFinishes getEvent_time_intervalFinishes() {
+        return event_time_intervalFinishes;
     }
 
-    public void setEventTimeIntervalFinishes(EventTimeIntervalFinishes eventTimeIntervalFinishes) {
-        this.eventTimeIntervalFinishes = eventTimeIntervalFinishes;
+    public void setEvent_time_intervalFinishes(EventTimeIntervalFinishes event_time_intervalFinishes) {
+        this.event_time_intervalFinishes = event_time_intervalFinishes;
     }
 
     public SubEvent getSubEvent() {

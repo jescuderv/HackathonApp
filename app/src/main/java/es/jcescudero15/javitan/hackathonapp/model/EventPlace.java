@@ -6,6 +6,15 @@ public class EventPlace {
     private String type;
     private String value;
 
+    public EventPlace(){
+
+    }
+
+    public EventPlace(String type, String value) {
+        this.type = type;
+        this.value = value;
+    }
+
     public String getType() {
         return type;
     }

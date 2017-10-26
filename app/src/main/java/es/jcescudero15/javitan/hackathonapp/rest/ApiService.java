@@ -1,4 +1,4 @@
-package es.jcescudero15.javitan.hackathonapp.model;
+package es.jcescudero15.javitan.hackathonapp.rest;
 
 import okhttp3.OkHttpClient;
 import okhttp3.logging.HttpLoggingInterceptor;
@@ -9,11 +9,11 @@ import retrofit2.converter.gson.GsonConverterFactory;
  * Created by Javitan on 26/10/2017.
  */
 
-public class ApiAdapter {
+public class ApiService {
 
-    private static ApiService API_SERVICE;
+    private static EndPointInterface API_SERVICE;
 
-    public static ApiService getApiService() {
+    public static EndPointInterface getApiService() {
 
         // Creamos un interceptor y le indicamos el log level a usar
         HttpLoggingInterceptor logging = new HttpLoggingInterceptor();
@@ -31,7 +31,7 @@ public class ApiAdapter {
                     .addConverterFactory(GsonConverterFactory.create())
                     .client(httpClient.build()) // <-- usamos el log level
                     .build();
-            API_SERVICE = retrofit.create(ApiService.class);
+            API_SERVICE = retrofit.create(EndPointInterface.class);
         }
 
         return API_SERVICE;

@@ -4,7 +4,7 @@ import java.util.List;
 
 public class Results {
 
-    private List<Binding> bindings = null;
+    private List<Binding> bindings;
 
     public List<Binding> getBindings() {
         return bindings;
