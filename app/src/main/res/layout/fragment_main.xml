@@ -65,7 +65,6 @@
             android:textSize="16dp"
             android:padding="5dp"
             android:textStyle="bold"
-            android:textColor="colorw"
             android:background="@color/colorAllEvents2"/>
 
         <TextView
