@@ -2,7 +2,6 @@ package es.jcescudero15.javitan.hackathonapp.ui.activity;
 
 import android.app.Fragment;
 import android.app.ProgressDialog;
-import android.content.Intent;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 
@@ -17,6 +16,7 @@ import es.jcescudero15.javitan.hackathonapp.rest.ApiService;
 import es.jcescudero15.javitan.hackathonapp.ui.fragment.CalendarFragment;
 import es.jcescudero15.javitan.hackathonapp.ui.fragment.EventFragment;
 import es.jcescudero15.javitan.hackathonapp.ui.fragment.EventListFragment;
+import es.jcescudero15.javitan.hackathonapp.ui.fragment.FavoriteFragment;
 import es.jcescudero15.javitan.hackathonapp.ui.fragment.MainFragment;
 import es.jcescudero15.javitan.hackathonapp.ui.fragment.PreferencesFragment;
 import io.realm.Realm;
@@ -142,7 +142,11 @@ public class MainActivity extends AppCompatActivity implements MainFragment.onEv
 
     @Override
     public void onClickMyEvents() {
-        startActivity(new Intent(this, MyEventsActivity.class));
+        getFragmentManager()
+                .beginTransaction()
+                .replace(R.id.content_main, new FavoriteFragment())
+                .addToBackStack(null)
+                .commit();
     }
 
     @Override

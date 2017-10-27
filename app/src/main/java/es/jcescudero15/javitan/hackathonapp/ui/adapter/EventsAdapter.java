@@ -14,6 +14,8 @@ import butterknife.BindView;
 import butterknife.ButterKnife;
 import es.jcescudero15.javitan.hackathonapp.R;
 import es.jcescudero15.javitan.hackathonapp.model.db.Evento;
+import es.jcescudero15.javitan.hackathonapp.model.db.User;
+import io.realm.Realm;
 
 /**
  * Created by josecarlos on 24/10/17.
@@ -65,6 +67,15 @@ public class EventsAdapter extends RecyclerView.Adapter<EventsAdapter.ViewHolder
 
         @BindView(R.id.item_title)
         TextView mTitle;
+
+        @BindView(R.id.asistire)
+        ImageView mImageAsistir;
+
+        @BindView(R.id.favorito)
+        ImageView mImageFav;
+
+        @BindView(R.id.compartir)
+        ImageView mImageCompartir;
 
         public ViewHolder(View itemView) {
             super(itemView);
@@ -131,6 +142,38 @@ public class EventsAdapter extends RecyclerView.Adapter<EventsAdapter.ViewHolder
                 @Override
                 public void onClick(View view) {
                     listener.OnClickEvent(evento);
+                }
+            });
+
+            mImageAsistir.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View v) {
+                    Realm realm = Realm.getDefaultInstance();
+                    realm.beginTransaction();
+                    User user = realm.where(User.class).findFirst();
+                    if (user != null){
+                        user.getEventListAssist().add(evento);
+                    } else{
+                        User usuario = realm.createObject(User.class);
+                        usuario.getEventListAssist().add(evento);
+                    }
+                    realm.commitTransaction();
+                }
+            });
+
+            mImageFav.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View v) {
+                    Realm realm = Realm.getDefaultInstance();
+                    realm.beginTransaction();
+                    User user = realm.where(User.class).findFirst();
+                    if (user != null){
+                        user.getEventListFavorites().add(evento);
+                    } else{
+                        User usuario = realm.createObject(User.class);
+                        usuario.getEventListFavorites().add(evento);
+                    }
+                    realm.commitTransaction();
                 }
             });
 

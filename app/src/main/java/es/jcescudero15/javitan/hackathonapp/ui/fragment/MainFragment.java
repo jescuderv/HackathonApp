@@ -52,6 +52,9 @@ public class MainFragment extends Fragment {
     public void onAttach(Context context) {
         super.onAttach(context);
         mEventsListListener = (onEventsListClickListener) getActivity();
+        mCalendarListener = (onCalendarClickListener) getActivity();
+        mMyEventsListener = (onMyEventsClickListener) getActivity();
+        mPreferencesListener = (onPreferencesClickListener) getActivity();
     }
 
     @Override
