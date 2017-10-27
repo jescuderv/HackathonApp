@@ -66,6 +66,10 @@ public class EventsAdapter extends RecyclerView.Adapter<EventsAdapter.ViewHolder
         @BindView(R.id.item_title)
         TextView mTitle;
 
+        @BindView(R.id.item_layout_background)
+        LinearLayout mBackground;
+
+
         public ViewHolder(View itemView) {
             super(itemView);
             ButterKnife.bind(this, itemView);
@@ -78,56 +82,56 @@ public class EventsAdapter extends RecyclerView.Adapter<EventsAdapter.ViewHolder
             String categoryEvent = evento.getCategory();
             if (categoryEvent != null) {
                 if (categoryEvent.contains("Concierto")) {
-                    //color
+                    //mBackground.setBackgroundColor(getResources().getColor(R.color.color1));
                     mImageCategory.setImageResource(R.drawable.concierto);
                 } else if (categoryEvent.contains("Conferencia")) {
-                    //color
+                    //mBackground.setBackgroundColor(getResources().getColor(R.color.color2));
                     mImageCategory.setImageResource(R.drawable.conferencia);
                 } else if (categoryEvent.contains("Deportes")) {
-                    //color
+                    //mBackground.setBackgroundColor(getResources().getColor(R.color.color3));
                     mImageCategory.setImageResource(R.drawable.deporte);
                 } else if (categoryEvent.contains("Exposicion")) {
-                    //color
+                    //mBackground.setBackgroundColor(getResources().getColor(R.color.color4));
                     mImageCategory.setImageResource(R.drawable.exposicion);
                 } else if (categoryEvent.contains("Entrega de premios")) {
-                    //color
+                    //mBackground.setBackgroundColor(getResources().getColor(R.color.color5));
                     mImageCategory.setImageResource(R.drawable.entregapremios);
                 } else if (categoryEvent.contains("Feria")) {
-                    //color
+                    //mBackground.setBackgroundColor(getResources().getColor(R.color.color6));
                     mImageCategory.setImageResource(R.drawable.feria);
                 } else if (categoryEvent.contains("Congreso")) {
-                    //color
+                    //mBackground.setBackgroundColor(getResources().getColor(R.color.color7));
                     mImageCategory.setImageResource(R.drawable.congreso);
                 } else if (categoryEvent.contains("Encuentro")) {
-                    //color
+                    //mBackground.setBackgroundColor(getResources().getColor(R.color.color8));
                     mImageCategory.setImageResource(R.drawable.encuentro);
                 } else if (categoryEvent.contains("Festival")) {
-                    //color
+                    //mBackground.setBackgroundColor(getResources().getColor(R.color.color9));
                     mImageCategory.setImageResource(R.drawable.festival);
                 } else if (categoryEvent.contains("Fiesta popular")) {
-                    //color
+                    //mBackground.setBackgroundColor(getResources().getColor(R.color.color10));
                     mImageCategory.setImageResource(R.drawable.fiestapopular);
                 } else if (categoryEvent.contains("Música")) {
-                    //color
+                    //mBackground.setBackgroundColor(getResources().getColor(R.color.color11));
                     mImageCategory.setImageResource(R.drawable.musica);
                 } else if (categoryEvent.contains("Poesía")) {
-                    //color
+                    //mBackground.setBackgroundColor(getResources().getColor(R.color.color12));
                     mImageCategory.setImageResource(R.drawable.poesia);
                 } else if (categoryEvent.contains("Otros")) {
-                    //color
+                    //mBackground.setBackgroundColor(getResources().getColor(R.color.color13));
                     mImageCategory.setImageResource(R.drawable.otros);
                 } else if (categoryEvent.contains("Presentación de libro")) {
-                    //color
+                    //mBackground.setBackgroundColor(getResources().getColor(R.color.color14));
                     mImageCategory.setImageResource(R.drawable.presentacionlibro);
                 } else if (categoryEvent.contains("Teatro/Cine")) {
-                    //color
+                    //mBackground.setBackgroundColor(getResources().getColor(R.color.color15));
                     mImageCategory.setImageResource(R.drawable.teatrocine);
                 }
             } else{
                 mImageCategory.setImageResource(R.drawable.otros);
             }
 
-            itemView.setOnClickListener(new View.OnClickListener() {
+            mLinearLayout.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View view) {
                     listener.OnClickEvent(evento);
