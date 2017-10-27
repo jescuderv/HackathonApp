@@ -3,9 +3,9 @@
 
 
     <string name="all">TODOS</string>
-    <string name="calendar">Calendario</string>
-    <string name="my_events">Mis eventos</string>
-    <string name="my_preferences">Mis preferencias</string>
+    <string name="calendar">CALENDARIO</string>
+    <string name="my_events">MIS EVENTOS</string>
+    <string name="my_preferences">MIS PREFERENCIAS</string>
 
     <string name="category">Categoria</string>
 

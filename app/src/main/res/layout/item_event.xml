@@ -47,22 +47,25 @@
                     android:layout_height="match_parent">
 
                     <ImageView
+                        android:id="@+id/asistire"
                         android:layout_width="0dp"
                         android:layout_height="match_parent"
                         android:layout_weight=".33"
-                        android:src="@mipmap/ic_launcher" />
+                        android:src="@drawable/likebn" />
 
                     <ImageView
+                        android:id="@+id/favorito"
                         android:layout_width="0dp"
                         android:layout_height="match_parent"
                         android:layout_weight=".33"
-                        android:src="@mipmap/ic_launcher" />
+                        android:src="@drawable/starbn" />
 
                     <ImageView
+                        android:id="@+id/compartir"
                         android:layout_width="0dp"
                         android:layout_height="match_parent"
                         android:layout_weight=".33"
-                        android:src="@mipmap/ic_launcher" />
+                        android:src="@drawable/sharebn" />
                 </LinearLayout>
 
             </LinearLayout>

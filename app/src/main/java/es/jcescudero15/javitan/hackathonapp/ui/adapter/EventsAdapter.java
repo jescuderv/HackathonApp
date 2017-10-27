@@ -6,6 +6,7 @@ import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
 
@@ -67,12 +68,27 @@ public class EventsAdapter extends RecyclerView.Adapter<EventsAdapter.ViewHolder
         @BindView(R.id.item_image_category_event)
         ImageView mImageCategory;
 
+        /*@BindView(R.id.favorito)
+        ImageView mButtonFavorito;
+
+        @BindView(R.id.asistire)
+        Button mButtonAsistir;
+
+        @BindView(R.id.compartir)
+        Button mButtonCompartir;*/
+
         public ViewHolder(View itemView) {
             super(itemView);
             ButterKnife.bind(this, itemView);
         }
 
         public void bind(final Event event, final OnEventClickListener listener){
+           /* switch (evento.getCategory){
+                case "Concierto":
+                    //color
+                    mImageCategory.setImageResource(R.drawable.concierto);
+                    break;
+            }*/
             mLinearLayout.setBackgroundColor(Color.GRAY);
             mImageCategory.setImageResource(R.drawable.calendar);
             itemView.setOnClickListener(new View.OnClickListener() {
@@ -81,6 +97,7 @@ public class EventsAdapter extends RecyclerView.Adapter<EventsAdapter.ViewHolder
                     listener.OnClickEvent(event);
                 }
             });
+
         }
     }
 
