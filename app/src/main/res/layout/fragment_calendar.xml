@@ -8,6 +8,8 @@
 
     <TextView
         android:id="@+id/mes"
+        android:textSize="26dp"
+        android:textStyle="bold"
         android:contentDescription="Calendario"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content" />
@@ -17,7 +19,7 @@
         android:layout_width="fill_parent"
         android:paddingRight="10dp"
         android:paddingLeft="10dp"
-        android:layout_height="250dp"
+        android:layout_height="300dp"
         app:compactCalendarTextSize="12sp"
         app:compactCalendarBackgroundColor="#F1F8E9"
         app:compactCalendarTextColor="#000"

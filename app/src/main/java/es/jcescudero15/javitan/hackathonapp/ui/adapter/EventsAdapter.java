@@ -1,6 +1,7 @@
 package es.jcescudero15.javitan.hackathonapp.ui.adapter;
 
 import android.content.Context;
+import android.content.Intent;
 import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -191,6 +192,17 @@ public class EventsAdapter extends RecyclerView.Adapter<EventsAdapter.ViewHolder
                     mImageFav.setImageResource(R.drawable.likecolor);
                     realm.commitTransaction();
                     Toast.makeText(mContext, "Evento guardado como favorito", Toast.LENGTH_SHORT).show();
+                }
+            });
+
+            mImageCompartir.setOnClickListener(new View.OnClickListener(){
+                @Override
+                public void onClick(View v) {
+                    Intent sendIntent = new Intent();
+                    sendIntent.setAction(Intent.ACTION_SEND);
+                    sendIntent.putExtra(Intent.EXTRA_TEXT, "He compartido el evento: " + evento.getName() + " más info en: " + evento.getUri());
+                    sendIntent.setType("text/plain");
+                    mContext.startActivity(sendIntent);
                 }
             });
 
