@@ -1,7 +1,7 @@
 
-package es.jcescudero15.javitan.hackathonapp.model;
+package es.jcescudero15.javitan.hackathonapp.model.dto;
 
-public class Uri {
+public class OmSeccionProcedencia {
 
     private String type;
     private String value;

@@ -12,7 +12,7 @@ import android.view.ViewGroup;
 import java.util.ArrayList;
 
 import es.jcescudero15.javitan.hackathonapp.R;
-import es.jcescudero15.javitan.hackathonapp.model.Event;
+import es.jcescudero15.javitan.hackathonapp.model.dto.Event;
 import es.jcescudero15.javitan.hackathonapp.ui.adapter.EventsAdapter;
 
 

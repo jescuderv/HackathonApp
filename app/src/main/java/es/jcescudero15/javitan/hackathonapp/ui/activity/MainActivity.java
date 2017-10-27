@@ -4,30 +4,38 @@ import android.app.ProgressDialog;
 import android.content.Intent;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
-import android.util.Log;
+
+import java.util.List;
 
 import butterknife.ButterKnife;
 import es.jcescudero15.javitan.hackathonapp.R;
-import es.jcescudero15.javitan.hackathonapp.model.Event;
+import es.jcescudero15.javitan.hackathonapp.model.db.Evento;
+import es.jcescudero15.javitan.hackathonapp.model.dto.Binding;
+import es.jcescudero15.javitan.hackathonapp.model.dto.Event;
 import es.jcescudero15.javitan.hackathonapp.rest.ApiService;
 import es.jcescudero15.javitan.hackathonapp.ui.fragment.CalendarFragment;
 import es.jcescudero15.javitan.hackathonapp.ui.fragment.EventListFragment;
 import es.jcescudero15.javitan.hackathonapp.ui.fragment.MainFragment;
 import es.jcescudero15.javitan.hackathonapp.ui.fragment.PreferencesFragment;
+import io.realm.Realm;
 import retrofit2.Call;
 import retrofit2.Callback;
 import retrofit2.Response;
 
 
 public class MainActivity extends AppCompatActivity implements MainFragment.onEventsListClickListener,
-MainFragment.onCalendarClickListener, MainFragment.onMyEventsClickListener, MainFragment.onPreferencesClickListener {
+        MainFragment.onCalendarClickListener, MainFragment.onMyEventsClickListener, MainFragment.onPreferencesClickListener {
 
+    private Realm mRealm;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.content_main);
         ButterKnife.bind(this);
+
+        Realm.init(this);
+        mRealm = Realm.getDefaultInstance();
 
         loadOpenDataJSON();
 
@@ -37,10 +45,10 @@ MainFragment.onCalendarClickListener, MainFragment.onMyEventsClickListener, Main
                 .commit();
 
 
-
     }
 
-    private void loadOpenDataJSON(){
+
+    private void loadOpenDataJSON() {
         final ProgressDialog progressDialog = new ProgressDialog(this);
         progressDialog.setTitle("Cargando datos...");
         progressDialog.show();
@@ -49,20 +57,67 @@ MainFragment.onCalendarClickListener, MainFragment.onMyEventsClickListener, Main
         call.enqueue(new Callback<Event>() {
             @Override
             public void onResponse(Call<Event> call, Response<Event> response) {
-                Event events = response.body();
-                Log.i("aaaaaa", "niiiice");
+                final Event events = response.body();
+                List<Binding> eventsList = events.getResults().getBindings();
+
+                mRealm.beginTransaction();
+                Evento firstEvento = mRealm.where(Evento.class).findFirst();
+                if (firstEvento != null){
+                    mRealm.delete(Evento.class);
+                }
+                for (Binding eventBinding : eventsList){
+                    Evento evento = mRealm.createObject(Evento.class);
+                    if (eventBinding.getUri() != null){
+                        evento.setUri(eventBinding.getUri().getValue());
+                    }
+                    if (eventBinding.getRdfs_comment() != null){
+                        evento.setComment(eventBinding.getRdfs_comment().getValue());
+                    }
+                    if (eventBinding.getGeo_long() != null){
+                        evento.setLongitude(eventBinding.getGeo_long().getValue());
+                    }
+                    if (eventBinding.getGeo_lat() != null){
+                        evento.setLatitude(eventBinding.getGeo_lat().getValue());
+                    }
+                    if (eventBinding.getOm_seccionProcedencia() != null){
+                        evento.setSection(eventBinding.getOm_seccionProcedencia().getValue());
+                    }
+                    if (eventBinding.getOm_horarioEvento() != null){
+                        evento.setTime(eventBinding.getOm_horarioEvento().getValue());
+                    }
+                    if (eventBinding.getEvent_place() != null){
+                        evento.setEventPlace(eventBinding.getEvent_place().getValue());
+                    }
+                    if (eventBinding.getOm_categoriaEvento() != null){
+                        evento.setCategory(eventBinding.getOm_categoriaEvento().getValue());
+                    }
+                    if (eventBinding.getRdfs_label() != null){
+                        evento.setName(eventBinding.getRdfs_label().getValue());
+                    }
+                    if (eventBinding.getEvent_time_intervalStarts() != null){
+                        evento.setIntervalStart(eventBinding.getEvent_time_intervalStarts().getValue());
+                    }
+                    if (eventBinding.getEvent_time_intervalFinishes() != null){
+                        evento.setIntervalFinish(eventBinding.getEvent_time_intervalFinishes().getValue());
+                    }
+                }
+                mRealm.commitTransaction();
+
                 progressDialog.dismiss();
             }
 
             @Override
             public void onFailure(Call<Event> call, Throwable t) {
                 progressDialog.dismiss();
-//                Toast.makeText(getApplication(), "FALLO", Toast.LENGTH_SHORT).show();
-//                Log.i("aaaaaa", "failure");
             }
         });
     }
 
+    @Override
+    protected void onDestroy() {
+        super.onDestroy();
+        mRealm.close();
+    }
 
     @Override
     public void onClickEventList() {
@@ -95,4 +150,5 @@ MainFragment.onCalendarClickListener, MainFragment.onMyEventsClickListener, Main
                 .addToBackStack(null)
                 .commit();
     }
+
 }

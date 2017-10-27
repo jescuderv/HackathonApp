@@ -1,10 +1,19 @@
 
-package es.jcescudero15.javitan.hackathonapp.model;
+package es.jcescudero15.javitan.hackathonapp.model.dto;
 
-public class SubEvent {
+public class EventPlace {
 
     private String type;
     private String value;
+
+    public EventPlace(){
+
+    }
+
+    public EventPlace(String type, String value) {
+        this.type = type;
+        this.value = value;
+    }
 
     public String getType() {
         return type;

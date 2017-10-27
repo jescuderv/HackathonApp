@@ -1,7 +1,7 @@
 
-package es.jcescudero15.javitan.hackathonapp.model;
+package es.jcescudero15.javitan.hackathonapp.model.dto;
 
-public class RdfsComment {
+public class OmCategoriaEvento {
 
     private String type;
     private String value;

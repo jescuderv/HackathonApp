@@ -1,10 +1,19 @@
 
-package es.jcescudero15.javitan.hackathonapp.model;
+package es.jcescudero15.javitan.hackathonapp.model.dto;
 
-public class OmCategoriaEvento {
+public class EventTimeIntervalFinishes {
 
+    private String datatype;
     private String type;
     private String value;
+
+    public String getDatatype() {
+        return datatype;
+    }
+
+    public void setDatatype(String datatype) {
+        this.datatype = datatype;
+    }
 
     public String getType() {
         return type;

@@ -1,6 +1,6 @@
 package es.jcescudero15.javitan.hackathonapp.rest;
 
-import es.jcescudero15.javitan.hackathonapp.model.Event;
+import es.jcescudero15.javitan.hackathonapp.model.dto.Event;
 import retrofit2.Call;
 import retrofit2.http.GET;
 

@@ -1,19 +1,10 @@
 
-package es.jcescudero15.javitan.hackathonapp.model;
+package es.jcescudero15.javitan.hackathonapp.model.dto;
 
-public class GeoLong {
+public class OmHorarioEvento {
 
-    private String datatype;
     private String type;
     private String value;
-
-    public String getDatatype() {
-        return datatype;
-    }
-
-    public void setDatatype(String datatype) {
-        this.datatype = datatype;
-    }
 
     public String getType() {
         return type;

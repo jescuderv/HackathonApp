@@ -1,7 +1,7 @@
 
-package es.jcescudero15.javitan.hackathonapp.model;
+package es.jcescudero15.javitan.hackathonapp.model.dto;
 
-public class GeoLat {
+public class EventTimeIntervalStarts {
 
     private String datatype;
     private String type;

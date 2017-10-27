@@ -1,18 +1,18 @@
 
-package es.jcescudero15.javitan.hackathonapp.model;
+package es.jcescudero15.javitan.hackathonapp.model.dto;
 
-public class EventPlace {
+public class GeoLat {
 
+    private String datatype;
     private String type;
     private String value;
 
-    public EventPlace(){
-
+    public String getDatatype() {
+        return datatype;
     }
 
-    public EventPlace(String type, String value) {
-        this.type = type;
-        this.value = value;
+    public void setDatatype(String datatype) {
+        this.datatype = datatype;
     }
 
     public String getType() {

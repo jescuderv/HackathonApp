@@ -14,7 +14,7 @@ import java.util.ArrayList;
 import butterknife.BindView;
 import butterknife.ButterKnife;
 import es.jcescudero15.javitan.hackathonapp.R;
-import es.jcescudero15.javitan.hackathonapp.model.Event;
+import es.jcescudero15.javitan.hackathonapp.model.dto.Event;
 
 /**
  * Created by josecarlos on 24/10/17.
