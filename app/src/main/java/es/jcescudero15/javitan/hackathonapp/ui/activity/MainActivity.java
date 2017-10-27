@@ -144,7 +144,7 @@ public class MainActivity extends AppCompatActivity implements MainFragment.onEv
     public void onClickMyEvents() {
         getFragmentManager()
                 .beginTransaction()
-                .replace(R.id.content_main, new FavoriteFragment())
+                .replace(R.id.content_main, new PreferencesFragment())
                 .addToBackStack(null)
                 .commit();
     }
@@ -153,7 +153,7 @@ public class MainActivity extends AppCompatActivity implements MainFragment.onEv
     public void onClickPreferences() {
         getFragmentManager()
                 .beginTransaction()
-                .replace(R.id.content_main, new PreferencesFragment())
+                .replace(R.id.content_main, new FavoriteFragment())
                 .addToBackStack(null)
                 .commit();
     }

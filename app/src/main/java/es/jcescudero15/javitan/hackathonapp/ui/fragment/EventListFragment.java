@@ -2,6 +2,7 @@ package es.jcescudero15.javitan.hackathonapp.ui.fragment;
 
 
 import android.app.Fragment;
+import android.content.Context;
 import android.os.Bundle;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
@@ -38,6 +39,11 @@ public class EventListFragment extends Fragment {
         // Required empty public constructor
     }
 
+    @Override
+    public void onAttach(Context context) {
+        super.onAttach(context);
+        mListener = (onClickEventDetailsListener) getActivity();
+    }
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
@@ -70,7 +76,7 @@ public class EventListFragment extends Fragment {
             public void OnClickEvent(Evento evento) {
                 mListener.onClickEventDetails(evento);
             }
-        }, mList);
+        }, mList, getActivity());
         mRecyclerView.setAdapter(mAdapter);
     }
 

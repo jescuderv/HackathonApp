@@ -3,14 +3,28 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     android:orientation="vertical">
 
-    <CalendarView
-        android:id="@+id/calendar_view"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content">
+    <TextView
+        android:id="@+id/mes"
+        android:contentDescription="Calendario"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content" />
 
-    </CalendarView>
+    <com.github.sundeepk.compactcalendarview.CompactCalendarView
+        android:id="@+id/compact_calendar_view"
+        android:layout_width="fill_parent"
+        android:paddingRight="10dp"
+        android:paddingLeft="10dp"
+        android:layout_height="250dp"
+        app:compactCalendarTextSize="12sp"
+        app:compactCalendarBackgroundColor="#F1F8E9"
+        app:compactCalendarTextColor="#000"
+        app:compactCalendarCurrentSelectedDayBackgroundColor="#FFE0B2"
+        app:compactCalendarCurrentDayBackgroundColor="@color/colorAccent"
+        app:compactCalendarMultiEventIndicatorColor="#EF6C00" />
+
     <View
         android:layout_width="match_parent"
         android:layout_height="300dp">

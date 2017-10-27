@@ -75,7 +75,7 @@ public class FavoriteFragment extends Fragment {
             public void OnClickEvent(Evento evento) {
                 mListener.onClickEventDetails(evento);
             }
-        }, listaAsistir);
+        }, listaAsistir, getActivity());
         mRecyclerView.setAdapter(mAdapter);
     }
 

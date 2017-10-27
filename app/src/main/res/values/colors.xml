@@ -9,4 +9,20 @@
     <color name="colorCalendar">#70DDFE</color>
     <color name="colorPreferences">#fdff9a</color>
     <color name="colorFavorites">#F86262</color>
+    <color name="color1">#B40404</color>
+    <color name="color2">#B43104</color>
+    <color name="color3">#B45F04</color>
+    <color name="color4">#B18904</color>
+    <color name="color5">#AEB404</color>
+    <color name="color6">#86B404</color>
+    <color name="color7">#5FB404</color>
+    <color name="color8">#31B404</color>
+    <color name="color9">#04B431</color>
+    <color name="color10">#04B486</color>
+    <color name="color11">#04B4AE</color>
+    <color name="color12">#0489B1</color>
+    <color name="color13">#0431B4</color>
+    <color name="color14">#5F04B4</color>
+    <color name="color15">#B404AE</color>
+
 </resources>
