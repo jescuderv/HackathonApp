@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
-    android:layout_height="match_parent"
+    android:layout_height="wrap_content"
     android:orientation="horizontal">
 
     <android.support.v7.widget.CardView
@@ -20,13 +20,14 @@
                 android:orientation="vertical"
                 android:layout_width="match_parent"
                 android:background="@color/cardview_dark_background"
-                android:layout_height="match_parent">
+                android:layout_height="150dp">
 
                 <ImageView
+                    android:padding="5dp"
                     android:id="@+id/item_image_category_event"
                     android:layout_gravity="end"
-                    android:layout_width="150dp"
-                    android:layout_height="150dp"
+                    android:layout_width="100dp"
+                    android:layout_height="100dp"
                     android:src="@mipmap/ic_launcher_round"
                     android:contentDescription="@string/category" />
 
@@ -47,22 +48,28 @@
                     android:layout_height="match_parent">
 
                     <ImageView
+                        android:id="@+id/asistire"
+                        android:paddingBottom="5dp"
                         android:layout_width="0dp"
-                        android:layout_height="match_parent"
+                        android:layout_height="wrap_content"
                         android:layout_weight=".33"
-                        android:src="@mipmap/ic_launcher" />
+                        android:src="@drawable/likebn" />
 
                     <ImageView
+                        android:paddingBottom="5dp"
+                        android:id="@+id/favorito"
                         android:layout_width="0dp"
                         android:layout_height="match_parent"
                         android:layout_weight=".33"
-                        android:src="@mipmap/ic_launcher" />
+                        android:src="@drawable/starbn" />
 
                     <ImageView
+                        android:paddingBottom="5dp"
+                        android:id="@+id/compartir"
                         android:layout_width="0dp"
                         android:layout_height="match_parent"
                         android:layout_weight=".33"
-                        android:src="@mipmap/ic_launcher" />
+                        android:src="@drawable/sharebn" />
                 </LinearLayout>
 
             </LinearLayout>

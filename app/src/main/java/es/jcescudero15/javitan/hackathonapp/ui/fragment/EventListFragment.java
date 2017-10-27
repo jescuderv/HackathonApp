@@ -12,8 +12,10 @@ import android.view.ViewGroup;
 import java.util.ArrayList;
 
 import es.jcescudero15.javitan.hackathonapp.R;
-import es.jcescudero15.javitan.hackathonapp.model.dto.Event;
+import es.jcescudero15.javitan.hackathonapp.model.db.Evento;
 import es.jcescudero15.javitan.hackathonapp.ui.adapter.EventsAdapter;
+import io.realm.Realm;
+import io.realm.RealmResults;
 
 
 /**
@@ -24,6 +26,7 @@ public class EventListFragment extends Fragment {
     private RecyclerView mRecyclerView;
     private RecyclerView.Adapter mAdapter;
     private RecyclerView.LayoutManager mLayoutManager;
+    private Realm mRealm;
 
 
     public EventListFragment() {
@@ -37,12 +40,21 @@ public class EventListFragment extends Fragment {
         // Inflate the layout for this fragment
         View view = inflater.inflate(R.layout.fragment_event_list, container, false);
         mRecyclerView = (RecyclerView) view.findViewById(R.id.recycler_view_event_list);
+        mRealm = Realm.getDefaultInstance();
         listarElementos();
         return view;
     }
 
     private void listarElementos() {
-        ArrayList<Event> mList = new ArrayList<>();
+        ArrayList<Evento> mList = new ArrayList<>();
+
+        mRealm.beginTransaction();
+        RealmResults<Evento> allEvents = mRealm.where(Evento.class).findAll();
+        for (Evento evento : allEvents){
+            mList.add(evento);
+        }
+        mRealm.commitTransaction();
+
 
         // use a linear layout manager
         mLayoutManager = new LinearLayoutManager(getActivity());
@@ -50,10 +62,10 @@ public class EventListFragment extends Fragment {
 
         mAdapter = new EventsAdapter(new EventsAdapter.OnEventClickListener() {
             @Override
-            public void OnClickEvent(Event event) {
+            public void OnClickEvent(Evento evento) {
 
             }
-        }, getActivity(), mList);
+        }, mList);
         mRecyclerView.setAdapter(mAdapter);
     }
 

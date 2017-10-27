@@ -40,7 +40,8 @@
             android:layout_width="0dp"
             android:layout_height="match_parent"
             android:layout_weight=".5"
-            android:orientation="vertical">
+            android:orientation="vertical"
+            android:background="@color/colorCalendar">
 
 
             <ImageView
@@ -50,7 +51,7 @@
                 android:layout_gravity="center"
                 android:clickable="true"
                 android:contentDescription="@string/calendar"
-                android:src="@drawable/calendar" />
+                android:src="@drawable/calendar"/>
         </LinearLayout>
     </TableRow>
 
@@ -65,15 +66,18 @@
             android:textSize="16dp"
             android:padding="5dp"
             android:textStyle="bold"
-            android:textColor="@color/colorWhite"
-            android:background="@color/colorAllEvents2"/>
+            android:background="@color/colorAllEvents"/>
 
         <TextView
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_weight=".5"
             android:gravity="center"
-            android:text="@string/calendar" />
+            android:text="@string/calendar"
+            android:textSize="16dp"
+            android:padding="5dp"
+            android:textStyle="bold"
+            android:background="@color/colorCalendar"/>
     </TableRow>
 
 
@@ -87,7 +91,8 @@
             android:layout_width="0dp"
             android:layout_height="match_parent"
             android:layout_weight=".5"
-            android:orientation="vertical">
+            android:orientation="vertical"
+            android:background="@color/colorFavorites">
 
             <ImageView
                 android:id="@+id/main_my_events"
@@ -103,7 +108,8 @@
             android:layout_width="0dp"
             android:layout_height="match_parent"
             android:layout_weight=".5"
-            android:orientation="vertical">
+            android:orientation="vertical"
+            android:background="@color/colorPreferences">
 
 
             <ImageView
@@ -113,7 +119,9 @@
                 android:layout_gravity="center"
                 android:clickable="true"
                 android:contentDescription="@string/my_preferences"
-                android:src="@drawable/star" />
+                android:src="@drawable/star"
+
+                />
         </LinearLayout>
     </TableRow>
 
@@ -125,14 +133,22 @@
             android:layout_height="wrap_content"
             android:layout_weight=".5"
             android:gravity="center"
-            android:text="@string/my_events" />
+            android:text="@string/my_events"
+            android:textSize="16dp"
+            android:padding="5dp"
+            android:textStyle="bold"
+            android:background="@color/colorFavorites"/>
 
         <TextView
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_weight=".5"
             android:gravity="center"
-            android:text="@string/my_preferences" />
+            android:text="@string/my_preferences"
+            android:textSize="16dp"
+            android:padding="5dp"
+            android:textStyle="bold"
+            android:background="@color/colorPreferences"/>
 
     </TableRow>
 
