@@ -23,10 +23,15 @@ import io.realm.RealmResults;
  */
 public class EventListFragment extends Fragment {
 
+    public interface onClickEventDetailsListener{
+        void onClickEventDetails(Evento evento);
+    }
+
     private RecyclerView mRecyclerView;
     private RecyclerView.Adapter mAdapter;
     private RecyclerView.LayoutManager mLayoutManager;
     private Realm mRealm;
+    private onClickEventDetailsListener mListener;
 
 
     public EventListFragment() {
@@ -63,7 +68,7 @@ public class EventListFragment extends Fragment {
         mAdapter = new EventsAdapter(new EventsAdapter.OnEventClickListener() {
             @Override
             public void OnClickEvent(Evento evento) {
-
+                mListener.onClickEventDetails(evento);
             }
         }, mList);
         mRecyclerView.setAdapter(mAdapter);

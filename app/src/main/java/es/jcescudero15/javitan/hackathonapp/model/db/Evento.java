@@ -1,12 +1,14 @@
 package es.jcescudero15.javitan.hackathonapp.model.db;
 
+import java.io.Serializable;
+
 import io.realm.RealmObject;
 
 /**
  * Created by Javitan on 27/10/2017.
  */
 
-public class Evento extends RealmObject {
+public class Evento extends RealmObject implements Serializable {
 
     private String uri;
     private String comment;

@@ -6,6 +6,7 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
+import android.widget.TextView;
 
 import java.util.ArrayList;
 
@@ -62,6 +63,8 @@ public class EventsAdapter extends RecyclerView.Adapter<EventsAdapter.ViewHolder
         @BindView(R.id.item_image_category_event)
         ImageView mImageCategory;
 
+        @BindView(R.id.item_title)
+        TextView mTitle;
 
         public ViewHolder(View itemView) {
             super(itemView);
@@ -69,6 +72,9 @@ public class EventsAdapter extends RecyclerView.Adapter<EventsAdapter.ViewHolder
         }
 
         public void bind(final Evento evento, final OnEventClickListener listener){
+            if (evento.getName() != null){
+                mTitle.setText(evento.getName());
+            }
             String categoryEvent = evento.getCategory();
             if (categoryEvent != null) {
                 if (categoryEvent.contains("Concierto")) {

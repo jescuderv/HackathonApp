@@ -1,5 +1,6 @@
 package es.jcescudero15.javitan.hackathonapp.ui.activity;
 
+import android.app.Fragment;
 import android.app.ProgressDialog;
 import android.content.Intent;
 import android.os.Bundle;
@@ -14,6 +15,7 @@ import es.jcescudero15.javitan.hackathonapp.model.dto.Binding;
 import es.jcescudero15.javitan.hackathonapp.model.dto.Event;
 import es.jcescudero15.javitan.hackathonapp.rest.ApiService;
 import es.jcescudero15.javitan.hackathonapp.ui.fragment.CalendarFragment;
+import es.jcescudero15.javitan.hackathonapp.ui.fragment.EventFragment;
 import es.jcescudero15.javitan.hackathonapp.ui.fragment.EventListFragment;
 import es.jcescudero15.javitan.hackathonapp.ui.fragment.MainFragment;
 import es.jcescudero15.javitan.hackathonapp.ui.fragment.PreferencesFragment;
@@ -24,7 +26,8 @@ import retrofit2.Response;
 
 
 public class MainActivity extends AppCompatActivity implements MainFragment.onEventsListClickListener,
-        MainFragment.onCalendarClickListener, MainFragment.onMyEventsClickListener, MainFragment.onPreferencesClickListener {
+        MainFragment.onCalendarClickListener, MainFragment.onMyEventsClickListener, MainFragment.onPreferencesClickListener,
+        EventListFragment.onClickEventDetailsListener{
 
     private Realm mRealm;
 
@@ -151,4 +154,16 @@ public class MainActivity extends AppCompatActivity implements MainFragment.onEv
                 .commit();
     }
 
+    @Override
+    public void onClickEventDetails(Evento evento) {
+        Bundle bundle = new Bundle();
+        bundle.putSerializable("evento", evento);
+        Fragment fragment = new EventFragment();
+        fragment.setArguments(bundle);
+        getFragmentManager()
+                .beginTransaction()
+                .replace(R.id.content_main, fragment)
+                .addToBackStack(null)
+                .commit();
+    }
 }
