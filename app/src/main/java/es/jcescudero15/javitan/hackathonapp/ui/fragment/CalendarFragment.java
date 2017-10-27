@@ -17,7 +17,7 @@ import es.jcescudero15.javitan.hackathonapp.R;
  */
 public class CalendarFragment extends Fragment {
 
-    @BindView(R.id.calendar_view)
+    @BindView(R.id.compact_calendar_view)
     public CalendarView mCalendarView;
 
     public CalendarFragment() {

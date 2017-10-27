@@ -68,15 +68,6 @@ public class EventsAdapter extends RecyclerView.Adapter<EventsAdapter.ViewHolder
         @BindView(R.id.item_title)
         TextView mTitle;
 
-        @BindView(R.id.asistire)
-        ImageView mImageAsistir;
-
-        @BindView(R.id.favorito)
-        ImageView mImageFav;
-
-        @BindView(R.id.compartir)
-        ImageView mImageCompartir;
-
         public ViewHolder(View itemView) {
             super(itemView);
             ButterKnife.bind(this, itemView);
@@ -89,19 +80,19 @@ public class EventsAdapter extends RecyclerView.Adapter<EventsAdapter.ViewHolder
             String categoryEvent = evento.getCategory();
             if (categoryEvent != null) {
                 if (categoryEvent.contains("Concierto")) {
-                    //color
+                    //mBackground.setBackgroundColor(getResources().getColor(R.color.color1));
                     mImageCategory.setImageResource(R.drawable.concierto);
                 } else if (categoryEvent.contains("Conferencia")) {
-                    //color
+                    //mBackground.setBackgroundColor(getResources().getColor(R.color.color2));
                     mImageCategory.setImageResource(R.drawable.conferencia);
                 } else if (categoryEvent.contains("Deportes")) {
-                    //color
+                    //mBackground.setBackgroundColor(getResources().getColor(R.color.color3));
                     mImageCategory.setImageResource(R.drawable.deporte);
                 } else if (categoryEvent.contains("Exposicion")) {
-                    //color
+                    //mBackground.setBackgroundColor(getResources().getColor(R.color.color4));
                     mImageCategory.setImageResource(R.drawable.exposicion);
                 } else if (categoryEvent.contains("Entrega de premios")) {
-                    //color
+                    //mBackground.setBackgroundColor(getResources().getColor(R.color.color5));
                     mImageCategory.setImageResource(R.drawable.entregapremios);
                 } else if (categoryEvent.contains("Feria")) {
                     //color
@@ -138,7 +129,7 @@ public class EventsAdapter extends RecyclerView.Adapter<EventsAdapter.ViewHolder
                 mImageCategory.setImageResource(R.drawable.otros);
             }
 
-            itemView.setOnClickListener(new View.OnClickListener() {
+            mLinearLayout.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View view) {
                     listener.OnClickEvent(evento);
